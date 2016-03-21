@@ -3,7 +3,10 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
-/**
+/**Enllaça la peticio de la calculadora client
+ * mitjanzant la interficie remota amb
+ * l'identificador "generico".
+ *
  * Created by 46066294p on 02/03/16.
  */
 public class ServerCalc implements InterfaceServerRMI{
@@ -14,7 +17,8 @@ public class ServerCalc implements InterfaceServerRMI{
 
         try{
             reg = LocateRegistry.createRegistry(5555);
-            System.out.println(reg);
+            System.out.println(reg.toString());
+
         }catch (Exception e){
             System.out.println("Error: No s'ha pogut crear el registre");
             e.printStackTrace();
